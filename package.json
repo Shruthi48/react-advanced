@@ -1,0 +1,51 @@
+{
+  "name": "react-advanced",
+  "version": "1.0.0",
+  "description": "To learn and implement advanced features of react",
+  "main": "lib/server.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "pm2 start lib/server.js --watch ",
+    "build": "webpack"
+  },
+  "babel": {
+    "presets": [
+      "react",
+      "env",
+      "stage-2",
+      "es2015"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shruthi48/react-advanced.git"
+  },
+  "author": "Shruthi Hariprakash",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shruthi48/react-advanced/issues"
+  },
+  "homepage": "https://github.com/Shruthi48/react-advanced#readme",
+  "devDependencies": {
+    "eslint": "^4.9.0",
+    "eslint-plugin-react": "^7.4.0"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "pm2": "^2.7.2",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "webpack": "^3.8.1"
+  }
+}
