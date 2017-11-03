@@ -68,6 +68,10 @@ ReactDOM.render(
 ```
 
 6. yarn add react react-dom webpack
-7. include `babel-polyfill` in webpack.config
+7. include `babel-polyfill` in webpack.config (to support async await)
+
+#### Rule of thumbs ####
+` create variables inside class component only if it needs to be created everytime the component renders or else define it in global space `
+
 
 
