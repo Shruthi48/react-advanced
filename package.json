@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "jest --watch",
-    "dev": "pm2 start lib/server.js --watch ",
+    "dev": "pm2 start -f lib/server.js --watch ",
     "build": "webpack"
   },
   "babel": {

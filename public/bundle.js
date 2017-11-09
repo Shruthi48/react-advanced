@@ -30186,6 +30186,7 @@ var App = function (_React$Component) {
                     return _this2.state.authors[id];
                 }
             };
+
             return _react2.default.createElement(_articleList2.default, {
                 articles: this.state.articles,
                 authors: articleActions
