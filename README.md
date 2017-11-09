@@ -74,4 +74,58 @@ ReactDOM.render(
 ` create variables inside class component only if it needs to be created everytime the component renders or else define it in global space `
 
 
+<h4> Server side Rendering (without Redux) </h4></br>
+
+<p>The most common use case for server-side rendering is to handle the initial render when a user (or search engine crawler) first requests our app(search engine indexing). When the server receives the request, it renders the required component(s) into an HTML string, and then sends it as a response to the client. From that point on, the client takes over rendering duties.
+This increases the performance when working on old browsers or slow internet speed as the server already has the copy , only the components with the change is re-rendered on the screen </p> </br>
+
+1. setup server (index.ejs is called when the first request is made to server , rendering html markup on server side)
+```
+import express  from 'express';
+import  config from './config.js';
+import  serverRender  from './serverRender.js';
+
+const app = express();
+
+app.use(express.static('public'));
+app.set('view engine','ejs');
+
+app.get('/', (req, res) => {
+  const initialContent = serverRender();
+  res.render('index', { initialContent } );
+});
+
+
+app.listen(config.port, function listenHandler() {
+  console.log('server running at port:',config.port);
+});
+```
+2. setup render server (sends the requested component in the form of string to client)
+```
+import React from 'react';
+import ReactDOMServer from 'react-dom/server';
+import App from './components/app';
+
+const serverRender = () => {
+  return  ReactDOMServer.renderToString(
+        <App />
+    );
+};
+
+export default serverRender;
+
+```
+3. hook html with a param
+```
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <p>This is webpack complete guide</p>
+        <div id="root"><%- initialContent -%></div>
+        <script src= 'bundle.js' ></script>
+    </body>
+</html>
+```
 
