@@ -9,7 +9,8 @@
   "scripts": {
     "test": "jest --watch",
     "dev": "pm2 start -f lib/server.js --watch --interpreter babel-node",
-    "build": "webpack"
+    "build": "webpack -w",
+    "delete-server": "pm2 delete server"
   },
   "babel": {
     "presets": [
