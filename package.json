@@ -8,8 +8,8 @@
   },
   "scripts": {
     "test": "jest --watch",
-    "dev": "pm2 start -f lib/server.js --watch --interpreter babel-node",
-    "build": "webpack -w",
+    "dev": "NODE_PATH=./lib pm2 start -f lib/server.js --watch --interpreter babel-node",
+    "build": "webpack -wd",
     "delete-server": "pm2 delete server"
   },
   "babel": {
