@@ -8,8 +8,9 @@
   },
   "scripts": {
     "test": "jest --watch",
-    "dev": "pm2 start -f lib/server.js --watch --interpreter babel-node",
-    "build": "webpack"
+    "dev": "NODE_PATH=./lib pm2 start -f lib/server.js --watch --interpreter babel-node",
+    "build": "webpack -wd",
+    "delete-server": "pm2 delete server"
   },
   "babel": {
     "presets": [
@@ -34,6 +35,7 @@
     "eslint-plugin-react": "^7.4.0"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-polyfill": "^6.26.0",

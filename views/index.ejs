@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script type='text/javascript'>
+          window.initialData = <%- JSON.stringify(initialData) -%>
+        </script>
     </head>
     <body>
         <p>This is webpack complete guide</p>
-        <div id="root"><%- initialContent -%></div>
+        <div id="root"><%- initialMarkup -%></div>
         <script src= 'bundle.js' ></script>
     </body>
 </html>
