@@ -128,4 +128,48 @@ export default serverRender;
     </body>
 </html>
 ```
+<hr>
+<b> <h2> Performance Optimisation </h2> </b>
+<p>
+  In react application most of the optimisation concerns occurs during the update operation. </br>
+  An update can be caused by change in the state or props. These life cycle methods are called when there is a change in state   or props and the component needs to be re rendered. 
+</p></br>
+1. componentWillRecieveProps() </br>
+2. shouldComponentUpdate()</br>
+3. componentWillUpdate()</br>
+4. render()</br>
+5. componentDidUpdate()</br>
+
+<b> componentWillRecieveProps </b>
+
+```
+componentWillRecieveProps(nextProps) {
+ // the parent rendered
+ }
+ ```
+ - Every time the parent component gets re rendered it re-renders the child component and passes new set of props , even when the props are identical to the current one. </br>
+ - The call to componentRecieveProps doesnot really mean the component needs to be re-rendered
+ 
+ <hr>
+ <b> shouldComponentUpdate </b>
+ 
+ ``` 
+ shouldComponentUpdate(nextProps, nextState) {
+ //return true or false
+ }
+ ```
+ - usefull when we want to cancel the render or component update , just return false.
+ - PureComponents have this behaviour inbuilt so there is no need to use this life cycle method when using purecomponents
+ <hr>
+ <b> componentWillUpdate </b>
+ 
+ ```
+ componentWillUpdate(nextProps,nextState) {
+ //this render is going to happen
+ }
+ ```
+ - called just before the rendering step
+ 
+ 
+  
 
