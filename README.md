@@ -170,6 +170,14 @@ componentWillRecieveProps(nextProps) {
  ```
  - called just before the rendering step
  
- 
+ <b> Measure performance - http://localhost:7000/?react_perf </b>
+ https://reactjs.org/docs/perf.html
+ https://reactjs.org/docs/optimizing-performance.html#profiling-components-with-the-chrome-performance-tab
+  - always use PureComponents
+  - subscribe to only part of state that is used
+  - always use immutable data structures , returns a copy of state and mutating the existing state , so componentShouldUpdate gets a different nextProps
   
+  <hr>
+  - we can put all the dependencies as a separate entry point in webpack and bundle it , as these dependencies don't change as often as our application. By doing this we can avoid throwing away good cache.
+  - versioning can help us keep track of bundles being changes
 
